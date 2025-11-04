@@ -102,7 +102,7 @@ export function LampDemo() {
                         </p>
                         <p>
                           Scheduled for the 21st and 22nd of Nov, 2025, this event
-                          showcases eight unique competitions, each designed for
+                          showcases seven unique competitions, each designed for
                           individual or team participation.{" "}
                         </p>
                       </strong>{" "}
