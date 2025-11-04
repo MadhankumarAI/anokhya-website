@@ -49,7 +49,7 @@ export function LampDemo() {
   }, []);
 
   const getDeadTime = () => {
-    return new Date("2024-11-22T10:00:00+05:30"); // 8th November 2024, 00:00:00 IST
+    return new Date("2025-11-21T10:00:00+05:30"); // 8th November 2024, 00:00:00 IST
   };
 
   return (
@@ -80,8 +80,8 @@ export function LampDemo() {
                 </h2>
                 <h2 id="time">{timer}</h2>
                 <div id="label">
-                  <p>DAYS</p> <p>HOURS</p> <p>MINUTES</p>
-                  <p>SECONDS</p>
+                  {/* <p>DAYS</p> <p>HOURS</p> <p>MINUTES</p>
+                  <p>SECONDS</p> */}
                 </div>
               </div>
               <div className="abs_txt">
@@ -101,7 +101,7 @@ export function LampDemo() {
                           and SCRS Students Chapter.{" "}
                         </p>
                         <p>
-                          Scheduled for the 22nd and 23rd of Nov, 2024, this event
+                          Scheduled for the 21st and 22nd of Nov, 2025, this event
                           showcases eight unique competitions, each designed for
                           individual or team participation.{" "}
                         </p>
@@ -113,7 +113,7 @@ export function LampDemo() {
                         <span className="abs_dt">DAYS</span>
                       </div>
                       <div className="abs_t">
-                        <span className="abs_d">08</span>
+                        <span className="abs_d">07</span>
                         <span className="abs_dt">EVENTS</span>
                       </div>
                     </div>

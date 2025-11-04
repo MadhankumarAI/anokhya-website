@@ -31,7 +31,7 @@ const About_us = () => {
         //                     <h1>ANOKHYA TECH-FEST</h1>
         //                     <div className="abs_abs">
         //                         <strong> <p>Anokhya is a 2-Day Tech Fest organized by the department of Artificial Intelligence and Machine Learning under the aegis of DSCE Innovation Council and SCRS Students Chapter. </p>
-        //                             <p>Scheduled for the 8th and 9th of May, 2024, this event showcases nine unique competitions, each designed for individual or team participation. </p>
+        //                             <p>Scheduled for the 21st & 22nd of November, 2025, this event showcases nine unique competitions, each designed for individual or team participation. </p>
         //                             <p>In addition to the competitions, Anokhya offers a series of workshops and technical talks delivered by industry experts. Anokhya aims to foster innovation and skill development among students, making it a cornerstone event for budding technologists and engineers.</p>
         //                         </strong> </div>
         //                     <div className="abs_tinfo">

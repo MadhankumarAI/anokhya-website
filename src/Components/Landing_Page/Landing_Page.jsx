@@ -84,9 +84,9 @@ export default function Homee() {
 
             {/* Rest of your component content */}
             <div className="home_m_top_left">
-              <h3>TECH FEST 2024</h3>
+              <h3>TECH FEST 2025</h3>
               <p>EVENTS WORKSHOPS TECH-TALKS</p>
-              <p style={{ color: "orange" }}>22th - 23th MAY 2024</p>
+              <p style={{ color: "orange" }}>21st - 22nd NOV 2025</p>
             </div>
             <div className="home_m_logo">
               <img src={logo} alt="Logo" />
