@@ -47,14 +47,13 @@ document.head.appendChild(style);
 
 // Event data
 const eventData = {
-  1: { name: "Photography", maxTeam: 1 },
-  2: { name: "Free Fire", maxTeam: 4 },
-  3: { name: "Shark Tank", maxTeam: 4 },
-  4: { name: "BGMI", maxTeam: 4 },
-  5: { name: "Treasure Hunt", maxTeam: 4 },
-  6: { name: "Tech Debate", maxTeam: 2 },
-  7: { name: "UI-UX", maxTeam: 2 },
-  8: { name: "Meme-Splash", maxTeam: 2 }
+  1: { name: "Accuracy is all you need", maxTeam: 2 },
+  2: { name: "Simply Automation", maxTeam: 2 },
+  3: { name: "Figma Clash", maxTeam: 3 },
+  4: { name: "RADIANT CLASH: VALORANT SHOWDOWN", maxTeam: 5 },
+  5: { name: "AirCrash – The Ultimate Roleplay Showdown", maxTeam: 1 },
+  6: { name: "Free Fire", maxTeam: 4 },
+  7: { name: "Treasure Hunt", maxTeam: 4 },
 };
 
 const colleges = [
@@ -161,8 +160,8 @@ const RegistrationForm = ({ eventId = 1 }) => {
             : (m.college === 'Others' ? m.otherCollege : m.college)
         }))
       };
-
-      const response = await fetch('http://localhost:8080/register', {
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL 
+      const response = await fetch(`${API_BASE_URL}/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
