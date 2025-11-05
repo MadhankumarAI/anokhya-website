@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Events.css";
 import event_data from "../../Assets/Data/Events_data.json";
 import { color } from "framer-motion";
@@ -83,7 +84,7 @@ const Events = () => {
         <div className="events_head">
           <h2 style={{fontSize:"40px"}}>EVENTS</h2>
           <p style={{color:"orange", fontSize:"20px"}}>Click on event card to know more !!</p>
-          <p1>slide to view</p1>
+          <p>slide to view</p>
         </div>
         <div className="event_con">
           <ul
@@ -100,7 +101,7 @@ const Events = () => {
                 style={{ backgroundImage: `url(${ele.img_path})` }}
               >
                 <div className="content">
-                  <a href={`/events/${ele.event_id}`}>Explore More</a>
+                  <Link to={`/events/${ele.event_id}`}>Explore More</Link>
                 </div>
               </li>
             ))}
@@ -112,7 +113,7 @@ const Events = () => {
 
             <button className="btn prev" onClick={handlePrev}>
               <ion-icon name="arrow-back-outline"></ion-icon>
-            </button>"guru"
+            </button>
             <button className="btn next" onClick={handleNext}>
               <ion-icon name="arrow-forward-outline"></ion-icon>
             </button>
