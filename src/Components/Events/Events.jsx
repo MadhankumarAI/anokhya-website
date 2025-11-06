@@ -101,7 +101,7 @@ const Events = () => {
                 style={{ backgroundImage: `url(${ele.img_path})` }}
               >
                 <div className="content">
-                  <Link to={`/events/${ele.event_id}`}>Explore More</Link>
+                  <Link to={`/events/${ele.event_id}`}>Register here !</Link>
                 </div>
               </li>
             ))}
