@@ -61,7 +61,7 @@ const navImages = [
             </div>
 
             {/* Navigation Buttons */}
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <button
                 onClick={() => setCurrentView('register')}
                 className="px-6 py-2 bg-gradient-to-r from-orange-500 to-yellow-500 text-black rounded-full hover:from-orange-600 hover:to-yellow-600 transition-colors font-medium shadow-lg hover:shadow-orange-500/25"
@@ -74,7 +74,7 @@ const navImages = [
               >
                 About
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </header>
