@@ -33,6 +33,7 @@
   top: 2%;
   right: 2%;
   text-align: right;
+  padding-top: 22px;
 }
 
 .home_m_top_left h3 {
@@ -43,18 +44,26 @@
 
 .home_m_top_left p {
   color: white;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   letter-spacing: 2px;
   font-family: "Barlow Condensed", sans-serif;
 }
 
 
 
-.home_m_logo img {
-  height: 10vw;
-  position: absolute;
-  left: 1%;
+.home_m_logo {
+  display: flex;        /* Enables flex layout */
+  gap: 10px;            /* Adds space between images */
+  align-items: center;  /* Centers images vertically */
+  justify-content: center; /* Optional: centers the whole group */
+  position: relative;   /* If you still need positioning context */
   top: 1%;
+  left: 1%;
+}
+
+.home_m_logo img {
+  width: 55px;
+  height: auto; /* Keeps aspect ratio */
 }
 
 .home_m_banner {
@@ -220,7 +229,7 @@
 /* Small screens */
 @media (max-width: 500px) {
   .home_m_top_left h3 {
-    font-size: 1.2rem;
+    font-size: 0.5rem;
   }
 
   .home_m_top_left p,
