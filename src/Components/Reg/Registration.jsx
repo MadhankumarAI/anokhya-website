@@ -59,8 +59,7 @@ const eventData = {
 const colleges = [
   "DSATM",
   "DSCE",
-  "DSU",
-  "Others"
+  "DSU"
 ];
 
 const RegistrationForm = ({ eventId = 1 }) => {
@@ -77,10 +76,10 @@ const RegistrationForm = ({ eventId = 1 }) => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const initialMembers = Array.from({ length: memberCount }, (_, i) => ({
+    const initialMembers = Array.from({ length: memberCount }, () => ({
       name: '',
       phone: '',
-      email: i < 2 ? '' : null,
+      email: '',
       college: '',
       otherCollege: ''
     }));
@@ -120,7 +119,7 @@ const RegistrationForm = ({ eventId = 1 }) => {
         setError(`Member ${i + 1} needs a valid 10-digit phone number`);
         return false;
       }
-      if (i < 2 && (!member.email?.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(member.email))) {
+      if (!member.email?.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(member.email)) {
         setError(`Member ${i + 1} needs a valid email`);
         return false;
       }
@@ -153,10 +152,10 @@ const RegistrationForm = ({ eventId = 1 }) => {
       const registrationData = {
         event_name: event.name,
         team_name: teamName,
-        members: members.map((m, i) => ({
+        members: members.map((m) => ({
           name: m.name,
           phone: m.phone,
-          email: i < 2 ? m.email : null,
+          email: m.email,
           college: sameCollege 
             ? (selectedCollege === 'Others' ? otherCollege : selectedCollege)
             : (m.college === 'Others' ? m.otherCollege : m.college)
@@ -184,10 +183,10 @@ const RegistrationForm = ({ eventId = 1 }) => {
         setIsOpen(false);
         setTeamName('');
         setMemberCount(event.minTeam);
-        setMembers(Array.from({ length: event.minTeam }, (_, i) => ({
+        setMembers(Array.from({ length: event.minTeam }, () => ({
           name: '',
           phone: '',
-          email: i < 2 ? '' : null,
+          email: '',
           college: '',
           otherCollege: ''
         })));
@@ -374,15 +373,13 @@ const RegistrationForm = ({ eventId = 1 }) => {
                         placeholder="Phone Number (10 digits)"
                       />
 
-                      {index < 2 && (
-                        <input
-                          type="email"
-                          value={member.email || ''}
-                          onChange={(e) => handleMemberChange(index, 'email', e.target.value)}
-                          className="w-full px-4 py-2.5 bg-black/30 backdrop-blur-md border border-orange-500/20 rounded-lg text-white placeholder:text-gray-500 text-sm focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/20 transition-all"
-                          placeholder="Email Address"
-                        />
-                      )}
+                      <input
+                        type="email"
+                        value={member.email || ''}
+                        onChange={(e) => handleMemberChange(index, 'email', e.target.value)}
+                        className="w-full px-4 py-2.5 bg-black/30 backdrop-blur-md border border-orange-500/20 rounded-lg text-white placeholder:text-gray-500 text-sm focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/20 transition-all"
+                        placeholder="Email Address"
+                      />
 
                       {!sameCollege && (
                         <>
