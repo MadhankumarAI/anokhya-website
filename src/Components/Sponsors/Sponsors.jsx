@@ -3,7 +3,7 @@ import './Sponsors.css';
 import img1 from './images/cocoa.jpg';
 import img2 from './images/Canam.png';
 import bimg from '../../Assets/bottom.png'
-
+import nalani from "/public/nalanis.png"
 const Sponsors = () => {
   return (
     <div className='spons'>
@@ -12,8 +12,8 @@ const Sponsors = () => {
         <p>Click to Discover Sponsor Offerings!</p>
       </div>
       <div className='sponsMain'>
-        <a href={"/sponsor/CocoaCounty"}> <div className='card'>
-          <img className='card-image' src={img1} alt="Cocoa Sponsor" />
+        <a href={"/"}> <div className='card'>
+          <img className='card-image' src={nalani} alt="nalini" />
 
         </div></a>
 

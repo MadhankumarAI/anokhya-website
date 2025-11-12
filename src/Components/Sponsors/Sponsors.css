@@ -51,8 +51,8 @@
 
 .card-image {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 200px;
+    object-fit: fill
 }
 
 .card-body {
