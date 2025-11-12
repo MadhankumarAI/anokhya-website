@@ -51,7 +51,7 @@ const eventData = {
   2: { name: "Simply Automation", minTeam: 1, maxTeam: 2 },
   3: { name: "Figma Clash", minTeam: 1, maxTeam: 3 },
   4: { name: "RADIANT CLASH: VALORANT SHOWDOWN", minTeam: 5, maxTeam: 5 },
-  5: { name: "AirCrash – The Ultimate Roleplay Showdown", minTeam: 1, maxTeam: 1 },
+  5: { name: "AirCrash - The Ultimate Roleplay Showdown", minTeam: 1, maxTeam: 1 },
   6: { name: "Free Fire", minTeam: 4, maxTeam: 4 },
   7: { name: "Treasure Hunt", minTeam: 2, maxTeam: 4 },
 };
@@ -64,6 +64,10 @@ const colleges = [
 
 const RegistrationForm = ({ eventId = 1 }) => {
   const event = eventData[eventId];
+  
+  const CLOSED_EVENT_IDS = [1, 6]; //closed events
+  const isRegistrationClosed = CLOSED_EVENT_IDS.includes(eventId);
+  
   const [isOpen, setIsOpen] = useState(false);
   const [teamName, setTeamName] = useState('');
   const [members, setMembers] = useState([]);
@@ -203,14 +207,32 @@ const RegistrationForm = ({ eventId = 1 }) => {
 
   return (
     <>
-      <button
-        onClick={() => setIsOpen(true)}
-        className="px-8 py-3 bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-500 text-black font-bold rounded-xl 
-                   hover:shadow-lg hover:shadow-orange-500/50 hover:-translate-y-0.5 
-                   transition-all duration-300 active:scale-95"
-      >
-        Register Now
-      </button>
+      {isRegistrationClosed ? (
+        <button
+          disabled
+          className="px-8 py-3 
+           bg-gradient-to-r from-gray-700 via-gray-600 to-gray-700 
+           text-gray-300 font-semibold 
+           rounded-xl border border-gray-500/40 
+           shadow-inner shadow-black/20 
+           cursor-not-allowed opacity-80 
+           tracking-wide
+           hover:opacity-80 hover:shadow-none 
+           transition-all duration-300"
+
+        >
+          Registrations are Closed
+        </button>
+      ) : (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="px-8 py-3 bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-500 text-black font-bold rounded-xl 
+                     hover:shadow-lg hover:shadow-orange-500/50 hover:-translate-y-0.5 
+                     transition-all duration-300 active:scale-95"
+        >
+          Register Now
+        </button>
+      )}
 
       {isOpen && (
         <div 

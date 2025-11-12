@@ -3,7 +3,7 @@
     "title": "Accuracy is all you need",
     "event_id": 1,
     "event_name": "Accuracy is all you need",
-    "event_description": "Accuracy is All You Need is a competitive machine learning challenge where participants must build the most accurate predictive model on a given dataset. The event emphasizes real-world data handling, model training, and performance optimization under constraints.",
+    "event_description": "Accuracy is All You Need is a thrilling machine learning showdown where your models, not your words, do the talking. You’ll get a real-world dataset -not the usual polished Kaggle stuff -and just one mission: build the most accurate predictive model under tight constraints. It’s all about smart data handling, clever feature engineering, and squeezing every drop of performance out of your algorithms. With a hidden test set waiting to expose weak overfitted models, only the most creative and well-tuned solutions will rise to the top. In this challenge, precision isn’t just a metric -it’s the game.",
     "registration_fees": "Free",
     "prize_pool": {
       "first_prize": "INR 1500 ",
@@ -73,7 +73,7 @@
       "second_prize": "INR 750"
     },
     "team_size": "5",
-    "event_time": "22-23rd November",
+    "event_time": "21-22nd November",
     "event_time_24": "9:00 to 13:00",
     "event_coordinator1": "Aayush Pandey",
     "coordinator1_mobile": "9998283468",
@@ -113,7 +113,7 @@
       "second_prize": "INR 750"
     },
     "team_size": "4",
-    "event_time": "22nd November",
+    "event_time": "21st November",
     "event_time_24": "10:00 to 12:00",
     "event_coordinator1": "Ritvik K",
     "coordinator1_mobile": "9108208731",

@@ -63,11 +63,15 @@
   background: rgba(0, 0, 0, 0.5);
   padding: 10px;
   border-radius: 5px;
+  background: rgba(233, 158, 19, 0.737);
+  border: 2px solid rgba(246, 168, 60, 0.858);
+  transition: background-color 0.3s ease;
 }
 
 .content a {
   color: white;
   text-decoration: none;
+  font-weight: bold;
 }
 
 /* Hide scrollbar */
