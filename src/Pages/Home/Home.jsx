@@ -7,7 +7,7 @@ import Timeline from "../../Components/Timeline/Timeline";
 import PageLoader from "../../Components/PageLoader/PageLoader";
 import Events from "../../Components/Events/Events.jsx";
 import Homee from "../../Components/Landing_Page/Landing_Page";
-
+import Sponsors from "../../Components/Sponsors/Sponsors.jsx";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -35,7 +35,7 @@ function Home() {
             <Events />
           </div>
           <Timeline />
-          {/* <Sponsors/>  */}
+          <Sponsors/> 
           <Contact_Us />
         </>
       )}
