@@ -2,6 +2,31 @@
     background-color: rgb(0, 0, 0);
     padding: 30px 80px;
     display: grid;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated background gradient effect */
+.spons::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 165, 0, 0.1) 0%, transparent 70%);
+    animation: rotateGradient 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotateGradient {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.sponsors_head {
+    position: relative;
+    z-index: 1;
 }
 
 .sponsors_head h2 {
@@ -12,7 +37,38 @@
     font-size: 40px;
     border-bottom: solid 2px orange;
     text-transform: uppercase;
+    position: relative;
+    animation: slideInLeft 0.8s ease-out;
+}
 
+/* Animated underline glow */
+.sponsors_head h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, orange, #ff6b00);
+    box-shadow: 0 0 10px orange, 0 0 20px orange;
+    animation: expandLine 2s ease-out 0.5s forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes expandLine {
+    to {
+        width: 100%;
+    }
 }
 
 .sponsors_head p {
@@ -20,8 +76,20 @@
     font-family: "Barlow Condensed", sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color:orange;
+    color: orange;
     margin-bottom: 8vh;
+    animation: fadeInUp 0.8s ease-out 0.3s backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .sponsMain {
@@ -29,36 +97,161 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .card {
     width: 300px;
     height: 200px;
-    background-color: #fff;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
     margin: 10px;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 
+                0 0 0 1px rgba(255, 165, 0, 0);
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    animation: cardEntrance 0.6s ease-out backwards;
+    animation-delay: calc(var(--card-index, 0) * 0.1s);
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Stagger animation for cards */
+.card:nth-child(1) { --card-index: 1; }
+.card:nth-child(2) { --card-index: 2; }
+.card:nth-child(3) { --card-index: 3; }
+.card:nth-child(4) { --card-index: 4; }
+.card:nth-child(5) { --card-index: 5; }
+.card:nth-child(6) { --card-index: 6; }
+.card:nth-child(7) { --card-index: 7; }
+.card:nth-child(8) { --card-index: 8; }
+
+/* Glowing border effect on hover */
+.card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    padding: 2px;
+    background: linear-gradient(45deg, orange, #ff6b00, orange);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+    animation: rotateBorder 3s linear infinite;
+}
+
+@keyframes rotateBorder {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
 }
 
 .card:hover {
-    transform: translateY(-5px); 
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(255, 165, 0, 0.3),
+                0 5px 15px rgba(0, 0, 0, 0.2),
+                0 0 30px rgba(255, 165, 0, 0.2);
 }
 
+/* Shine effect on hover */
+.card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 70%
+    );
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    transition: transform 0.6s ease;
+}
+
+.card:hover::after {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+}
 
 .card-image {
     width: 100%;
     height: 200px;
-    object-fit: fill
+    object-fit: fill;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.card:hover .card-image {
+    transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 .card-body {
     padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
+/* Pulse animation for special sponsor tiers (add class to cards as needed) */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 8px 25px rgba(255, 165, 0, 0.4),
+                    0 0 30px rgba(255, 165, 0, 0.2);
+    }
+}
+
+.card.featured {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Loading skeleton animation (optional - for when images load) */
+.card.loading {
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 25%,
+        #e0e0e0 50%,
+        #f0f0f0 75%
+    );
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
 
 @media (max-width: 1000px) {
     .spons {
@@ -71,19 +264,29 @@
         padding-top: 15px;
     }
 
-    .sponsors_head h2{
+    .sponsors_head h2 {
         width: 180px;
         font-size: 27px;
         margin-left: 20px;
         margin-bottom: 10px;
     }
 
-    .sponsors_head p{
+    .sponsors_head p {
         margin-left: 20px;
     }
 
-    .card{
+    .card {
         margin-bottom: 6vh;
+        /* Reduced animation on mobile for performance */
+        animation-duration: 0.4s;
     }
 
+    /* Simplified hover effects on mobile */
+    .card:hover {
+        transform: translateY(-5px) scale(1.02);
+    }
+
+    .card::after {
+        display: none; /* Disable shine effect on mobile */
+    }
 }
