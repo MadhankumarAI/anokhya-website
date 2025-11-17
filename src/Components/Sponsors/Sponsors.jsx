@@ -3,8 +3,8 @@ import './Sponsors.css';
 import img1 from './images/cocoa.jpg';
 import img2 from './images/Canam.png';
 import img3 from './images/Netzy.jpg';
-import bimg from '../../Assets/bottom.png'
-import nalani from "/public/nalanis.png"
+import nalani from "/public/nalanis.png";
+import img4 from "./images/vastralaya.jpg";
 
 const Sponsors = () => {
   return (
@@ -14,7 +14,7 @@ const Sponsors = () => {
         <p>Click to Discover Sponsor Offerings!</p>
       </div>
       <div className='sponsMain'>
-        <a href={"/"}> <div className='card'>
+        <a href={"/"}> <div className='card blue-bg'>
           <img className='card-image' src={nalani} alt="nalini" />
 
         </div></a>
@@ -25,6 +25,10 @@ const Sponsors = () => {
 
          <a href='https://www.netzytechnosoft.com/'><div className='card'>
           <img className='card-image' src={img3} alt="Netzy Technosoft" />
+        </div></a>
+
+        <a href='#'><div className='card black-bg'>
+          <img className='card-image' src={img4} alt="Vastralaya" />
         </div></a>
       </div>
 
